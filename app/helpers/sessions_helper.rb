@@ -4,7 +4,6 @@ helpers do
   end
 
   def logged_in?
-    p current_user
     current_user != nil
   end
 end
