@@ -12,7 +12,7 @@ Guess.delete_all
 end
 
 5.times do
-  user = User.create(username: Faker::Internet.user_name, password: '123')
+  user = User.create(username: Faker::Internet.user_name, password: '123', url: Faker::Avatar.image)
   20.times do
     user.rounds << Round.create(deck_id: Deck.all.sample.id)
   end
