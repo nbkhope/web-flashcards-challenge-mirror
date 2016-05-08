@@ -5,10 +5,10 @@
 <p>The correct answer is "<%= Card.find_by(id: params[:id]).answer %>".</p>
 
   <% if @card %>
-    <button><a class="btn" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= @card.id %>">Next card</a></button>
+    <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= @card.id %>">Next card</a>
   <% else %>
 
-    <button><a class="btn" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/completed">Next card</a></button>
+    <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/completed">Next card</a>
   <% end %>
 
 </div>
