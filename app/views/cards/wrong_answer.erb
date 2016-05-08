@@ -1,0 +1,14 @@
+<div>
+
+<p>You suck!</p>
+<p>The answer to "<%= Card.find_by(id: params[:id]).question %>" was incorrect.</p>
+<p>The correct answer is "<%= Card.find_by(id: params[:id]).answer %>".</p>
+
+  <% if @card %>
+    <button><a class="btn" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= @card.id %>">Next card</a></button>
+  <% else %>
+
+    <button><a class="btn" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/completed">Next card</a></button>
+  <% end %>
+
+</div>
