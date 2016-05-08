@@ -7,7 +7,7 @@ end
 
 5.times do
   user = User.create(username: Faker::Internet.user_name, password: '123')
-  2.times do
+  20.times do
     user.rounds << Round.create(deck_id: Deck.all.sample.id)
   end
 end
