@@ -29,7 +29,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login</h4>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</h4>
       </div>
       <div class="modal-body">
         <%= erb :'users/login' %>
@@ -43,7 +43,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Register</h4>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Register</h4>
       </div>
       <div class="modal-body">
         <%= erb :'users/new' %>
@@ -74,6 +74,14 @@
       <%= yield %>
     </div>
   </div>
+
+  <footer class="row-footer">
+    <div class="container">
+      <div class="row text-center">
+        <span><%= Faker::Hipster.sentence %></span>
+      </div>
+    </div>
+  </footer>
 
   <!-- jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
