@@ -1,0 +1,10 @@
+<div>
+
+<p>You finished <%= @round.deck.name %>!</p>
+<p>You got <%= @round.stats[:correct_on_first_try] %> out of <%= @round.stats[:total_cards]%> correct!</p>
+<p>You made <%= @round.stats[:total_guesses] %> guesses!</p>
+
+<button><a class="btn" href="/">Return to list</a></button>
+<button><a class="btn" href="/decks/<%= @round.deck.id %>">Play again</a></button>
+
+</div>
