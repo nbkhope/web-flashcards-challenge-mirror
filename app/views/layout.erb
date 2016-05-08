@@ -29,7 +29,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login</h4>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</h4>
       </div>
       <div class="modal-body">
         <%= erb :'users/login' %>
@@ -43,7 +43,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Register</h4>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Register</h4>
       </div>
       <div class="modal-body">
         <%= erb :'users/new' %>
@@ -55,21 +55,33 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Flashcards</a>
+        <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Flashcards</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
         <% else %>
-          <li><a data-toggle="modal" data-target="#loginModal" href="#">Login</a></li>
-          <li><a data-toggle="modal" data-target="#registerModal" href="#">Register</a></li>
+          <li><a data-toggle="modal" data-target="#loginModal" href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+          <li><a data-toggle="modal" data-target="#registerModal" href="#"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Register</a></li>
         <% end %>
       </ul>
     </div>
   </nav>
 
-  <%= yield %>
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer class="row-footer">
+    <div class="container">
+      <div class="row text-center">
+        <span><%= Faker::Hipster.sentence %></span>
+      </div>
+    </div>
+  </footer>
 
   <!-- jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
