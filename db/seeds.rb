@@ -1,3 +1,9 @@
+Deck.delete_all
+User.delete_all
+Round.delete_all
+Card.delete_all
+Guess.delete_all
+
 2.times do
   deck = Deck.create(name: Faker::Hipster.word)
   10.times do
@@ -21,5 +27,12 @@ Round.all.each do |round|
     round.guesses << Guess.create(card_id: chosen_card_id, is_correct: correctness)
   end
 end
+
+skippers = Deck.create(name: "fiery_skippers")
+skippers.cards << Card.create(question: "Who always says 'It Works!'?", answer: "David")
+skippers.cards << Card.create(question: "How many brothers and sisters does Kelson have?", answer: "10")
+skippers.cards << Card.create(question: "Who merged to master???", answer: "Shin")
+skippers.cards << Card.create(question: "Who never goes out??", answer: "Victoria")
+skippers.cards << Card.create(question: "Who sleeps with the light on?", answer: "Elizabeth")
 
 
