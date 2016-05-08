@@ -59,7 +59,7 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+          <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.username %></a></li>
           <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
         <% else %>
           <li><a data-toggle="modal" data-target="#loginModal" href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
