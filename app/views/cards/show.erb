@@ -3,6 +3,6 @@
 <h2><%= @card.question %></h2>
 <form action="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= params[:id] %>" method="POST">
   <textarea name="response" placeholder="Put your answer here!"></textarea>
-  <input type="submit" value="amirite?">
+  <button class="btn btn-success" type="submit">amirite?</button>
 
 </form>
