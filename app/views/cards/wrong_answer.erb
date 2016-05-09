@@ -1,14 +1,20 @@
-<div>
 
-<p>You suck!</p>
-<p>The answer to "<%= Card.find_by(id: params[:id]).question %>" was incorrect.</p>
-<p>The correct answer is "<%= Card.find_by(id: params[:id]).answer %>".</p>
+<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
 
-  <% if @card %>
-    <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= @card.id %>">Next card</a>
-  <% else %>
+    <p>You suck!</p>
+    <p>The answer to "<%= Card.find_by(id: params[:id]).question %>" was incorrect.</p>
+    <p>The correct answer is "<%= Card.find_by(id: params[:id]).answer %>".</p>
 
-    <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/completed">Next card</a>
-  <% end %>
+    <div class="text-center">
+      <% if @card %>
+          <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= @card.id %>">Next card</a>
+      <% else %>
+          <a class="btn btn-danger" href="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/completed">Next card</a>
+      <% end %>
+    </div>
 
+    </div>
+  </div>
 </div>
