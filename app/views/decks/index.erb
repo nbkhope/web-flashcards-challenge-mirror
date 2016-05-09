@@ -1,11 +1,19 @@
 <h1>Decks</h1>
 
 <% if @decks.any? %>
-  <ul>
-    <% @decks.each do |deck| %>
-      <li><a href='/decks/<%= deck.id %>'><%= deck.name %></a></li>
 
+    <% @decks.each do |deck| %>
+    <!-- Makes it so we have either 1 panel per row, 3 panels, 4 panels, or 6 -->
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+    	<!-- Makes the whole panel clickable because it is a link -->
+    	<a href='/decks/<%= deck.id %>'>
+		    <div class="panel panel-default">
+				  <div class="panel-body">
+				    <h4><%= deck.name %></h4>
+				  </div>
+				</div>
+			</a>
+		</div>
     <% end %>
-  </ul>
 
 <% end %>
