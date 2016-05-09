@@ -9,6 +9,8 @@ post '/users' do
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else
+  	# Failed to create new user
+  	@errors = @user.errors.full_messages
     erb :'users/new'
   end
 end
