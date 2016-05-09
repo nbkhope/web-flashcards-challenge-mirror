@@ -1,8 +1,26 @@
-<h1><%= @card.deck.name %></h1>
+<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><%= @card.deck.name %></h3>
+	  </div>
+	  <div class="panel-body">
+	    <h2><%= @card.question %></h2>
+	    <form class="form-horizontal" action="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= params[:id] %>" method="POST">
 
-<h2><%= @card.question %></h2>
-<form action="/rounds/<%= params[:round_id] %>/decks/<%= params[:deck_id] %>/cards/<%= params[:id] %>" method="POST">
-  <textarea name="response" placeholder="Put your answer here!"></textarea>
-  <button class="btn btn-success" type="submit">amirite?</button>
+	    	<div class="form-group form-group-lg">
+	    		<div class="col-xs-offset-1 col-xs-10">
+			  		<input type="text" class="form-control" name="response" placeholder="Put your answer here!">
+			  	</div>	
+				</div>
+				<div class="text-center">
+			  	<button class="btn btn-success" type="submit">amirite?</button>
+			  </div>
+			</form>
+	  </div>
+	</div>
+</div>
 
-</form>
+<h1></h1>
+
+
+
